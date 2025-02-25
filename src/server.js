@@ -1,4 +1,5 @@
 import express from 'express'
+import dotenv from 'dotenv'
 import {redisClient} from './redis/redis.js'
 import {statusCode} from './constants/constant.js'
 import ping from './routes/ping.routes.js'
@@ -6,6 +7,7 @@ import urls from './routes/url.routes.js'
 
 const app = express()
 app.use(express.json())
+dotenv.config()
 
 // Set redis to global
 // let redis = new redisClient('redis-13597.crce182.ap-south-1-1.ec2.redns.redis-cloud.com',13597,'0GjwPiZfhPmE3fII3FUQ0CT8kXQ4916P')
@@ -19,7 +21,7 @@ global.statusCode = statusCode
 app.use('/api/v1/', ping)
 app.use('/api/v1/', urls)
 
-
-app.listen(8080, () => {
-  console.log(`Server is running on port ${8080}`)
-})
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running on port ${PORT}`);
+});

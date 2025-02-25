@@ -3,7 +3,7 @@ import {createClient} from 'redis'
 
 class redisClient {
   constructor(host,port,password) {
-    console.log(host,port);
+    console.log(host,port,password);
     
     this.client = createClient({
       socket: {
