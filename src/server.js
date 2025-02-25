@@ -8,7 +8,8 @@ const app = express()
 app.use(express.json())
 
 // Set redis to global
-let redis = new redisClient('redis-13597.crce182.ap-south-1-1.ec2.redns.redis-cloud.com',13597,'0GjwPiZfhPmE3fII3FUQ0CT8kXQ4916P')
+// let redis = new redisClient('redis-13597.crce182.ap-south-1-1.ec2.redns.redis-cloud.com',13597,'0GjwPiZfhPmE3fII3FUQ0CT8kXQ4916P')
+let redis = new redisClient(process.env.REDIS_HOST,process.env.REDIS_PORT,process.env.REDIS_PASSWORD)
 global.redis = redis
 
 // Set statusCode to global
