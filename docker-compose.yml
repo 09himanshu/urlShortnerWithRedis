@@ -19,7 +19,7 @@ services:
     depends_on:
       - redis
     environment:
-      - REDIS_PORT=6379  # Keep this as 6379 since the app is inside the network
+      - REDIS_PORT=6379
       - REDIS_HOST=my-redis
       - REDIS_PASSWORD=mypassword
-      - PORT=8080
+      - PORT=5000
