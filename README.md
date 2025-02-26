@@ -1,24 +1,26 @@
-URL Shortener with Node.js & Redis
+# URL Shortener with Node.js & Redis
 
-📌 Overview
+## 📌 Overview
 
 This is a simple URL Shortener like Bit.ly, built using Node.js and Redis. It generates short URLs for long URLs and stores the mappings in Redis for fast lookups.
 
-🛠️ Tech Stack
+### 🛠️ Tech Stack
 
-Node.js (Express/Fastify) – Backend API
+- Node.js (Express) – Backend API
+- Redis – In-memory key-value store for fast URL lookups
+- Docker – For running Redis in a container
 
-Redis – In-memory key-value store for fast URL lookups
-
-Docker (Optional) – For running Redis in a container
-
-🚀 Features
+### 🚀 Features
 
 ✅ Shorten long URLs instantly
-✅ Retrieve the original URL using the short code
+
+✅ Retrieve the original URL using the shortcode
+
 ✅ Store mappings in Redis for quick access
+
 ✅ Auto-expiry for shortened URLs (configurable)
 
+```
 📂 Project Structure
 
 📦 url-shortener
@@ -30,18 +32,14 @@ Docker (Optional) – For running Redis in a container
  ┣ 📜 .env                 # Environment variables
  ┣ 📜 README.md            # Project documentation
 
+```
 🛠 Setup & Installation
 
 1️⃣ Clone the Repository
 
-git clone https://github.com/your-username/url-shortener.git
-cd url-shortener
-
 2️⃣ Install Dependencies
 
-npm install
-
-3️⃣ Run Redis (Locally or with Docker)
+3️⃣ Run Redis on Docker
 
 Option 1: Run Redis Locally
 
